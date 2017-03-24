@@ -1,0 +1,33 @@
+{
+  "name": "qs-backend",
+  "version": "1.0.0",
+  "description": "backend for quantified self",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha test/*-test.js",
+    "start": "nodemon server.js",
+    "debug": "NODE_ENV=test mocha debug test/*-test.js"
+  },
+  "keywords": [
+    "calorie"
+  ],
+  "author": "Lucy Lucy Lucy",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "express": "^4.15.2",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "request": "^2.81.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "knex": "^0.12.9",
+    "path": "^0.12.7",
+    "pg": "^6.1.5",
+    "pug": "^2.0.0-beta11"
+  }
+}
