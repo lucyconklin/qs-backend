@@ -100,6 +100,8 @@ app.delete('/api/all-foods/:id', (request, response) => {
     })
   })
 })
+
+app.listen(process.env.PORT || 5000)
 //
 // if (!module.parent) {
 //   app.listen(app.get('port'), () => {
