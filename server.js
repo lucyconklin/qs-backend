@@ -5,12 +5,18 @@ const environment = process.env.NODE_ENV || 'development';
 const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 const path = require('path')
+const cors = require('cors')
 
 app.set('port', process.env.PORT || 3000)
 app.locals.title = 'Quantified Self'
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-// app.locals.allFoods = {}
+var corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+app.use(cors(corsOptions))
+app.options('*', cors(corsOptions))
 
 // GET root path
 app.get('/', (request, response) => {
@@ -94,7 +100,7 @@ app.delete('/api/all-foods/:id', (request, response) => {
     })
   })
 })
-// 
+//
 // if (!module.parent) {
 //   app.listen(app.get('port'), () => {
 //     console.log(`${app.locals.title} is running on ${app.get('port')}.`)
