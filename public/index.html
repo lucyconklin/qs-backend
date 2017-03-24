@@ -18,6 +18,10 @@
       padding: 40px;
       background-color: rgba(255,255,255,0.5);
     }
+    code {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -36,19 +40,19 @@
 
     <h2>Endpoints</h2>
     <ul>
-      <li>`GET` to `/api/all-foods/` returns a list of all foods as JSON</li>
-      <li>`GET` to `/api/all-foods/:id` returns a single food record with that id as JSON</li>
-      <li>`POST` to `/api/all-foods` will add a food to the database. See examples below for details on which attributes to include in the body of the request</li>
-      <li>`PUT` to `/api/all-foods/:id` will edit a food. See examples below for details on which attributes to include in the body of the request</li>
-      <li>`DELETE` to `/api/all-foods/:id` will delete the food record with that id.</li>
+      <li><code>GET</code> to <code>/api/all-foods/</code> returns a list of all foods as JSON</li>
+      <li><code>GET</code> to <code>/api/all-foods/:id</code> returns a single food record with that id as JSON</li>
+      <li><code>POST</code> to <code>/api/all-foods</code> will add a food to the database. See examples below for details on which attributes to include in the body of the request</li>
+      <li><code>PUT</code> to <code>/api/all-foods/:id</code> will edit a food. See examples below for details on which attributes to include in the body of the request</li>
+      <li><code>DELETE</code> to <code>/api/all-foods/:id</code> will delete the food record with that id.</li>
     </ul>
 
     <h2>URL Params</h2>
     <p>Pass the id (if required) in through the url. Pass all other information in the body of your request.</p>
 
     <h2>Success response</h2>
-    <p>For `GET` and `PUT` requests to an :id and all `POST` requests, the success response will be the requested or new record.</p>
-    <p>For `DELETE` requests you should see a message indicating that you have successfully deleted a record.</p>
+    <p>For <code>GET</code> and <code>PUT</code> requests to an :id and all <code>POST</code> requests, the success response will be the requested or new record.</p>
+    <p>For <code>DELETE</code> requests you should see a message indicating that you have successfully deleted a record.</p>
 
     <h2>Error response</h2>
     <p>Most endpoints will have helpful error messages. Usually this will occur when require params have not been included in the request.</p>
@@ -56,8 +60,8 @@
     <h2>Sample Calls</h2>
 
     <h4>Visit from your browser:</h4>
-    <p><a href='/api/all-foods'>/api/all-foods</a>
-    <p><a href='/api/all-foods/1'>/api/all-foods/1</a>
+    <p><a href='/api/all-foods'><code>/api/all-foods</code></a>
+    <p><a href='/api/all-foods/1'><code>/api/all-foods/1</code></a>
 
     <h4>From your app:</h4>
     <pre>
