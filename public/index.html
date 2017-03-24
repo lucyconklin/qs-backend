@@ -10,19 +10,67 @@
       background: -webkit-linear-gradient(to left, #56CCF2 , #2F80ED); /* Chrome 10-25, Safari 5.1-6 */
       background: linear-gradient(to left, #56CCF2 , #2F80ED); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
       color: rgba(0,0,0,0.7);
+      font-family: 'helvetica', sans-serif;
       }
+    .container {
+      width: 60%;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: rgba(255,255,255,0.5);
+    }
   </style>
 </head>
 <body>
-<h1>Quantified Self Backend</h1>
+  <section class='container'>
+    <h1>Quantified Self Backend API</h1>
 
-<ul><h2>API endpoints</h2>
-  <li><p>GET '/'</p></li>
-  <li><p>GET '/api/all-foods'</p></li>
-  <li><p>GET '/api/all-foods/:id'</p></li>
-  <li><p>POST '/api/all-foods'</p></li>
-  <li><p>PUT '/api/all-foods/:id'</p></li>
-  <li><p>DELETE '/api/all-foods/:id'</p></li>
-</ul>
+    <p>This API handles Create Read Update and Delete for a foods table where each
+      food has a name and calorie amount. You can fetch all foods stored in the
+      database, see one food, add a new food, edit an existing food, or delete a
+      food.</p>
+    <p>Designed to work with my
+      <a href='https://github.com/Laszlo-JFLMTCO/QS_Starter_Kit'>
+        Quantified Self
+      </a>
+      front end, this API is fully independent and sits on a postgres database.</p>
+
+    <h2>Endpoints</h2>
+    <ul>
+      <li>`GET` to `/api/all-foods/` returns a list of all foods as JSON</li>
+      <li>`GET` to `/api/all-foods/:id` returns a single food record with that id as JSON</li>
+      <li>`POST` to `/api/all-foods` will add a food to the database. See examples below for details on which attributes to include in the body of the request</li>
+      <li>`PUT` to `/api/all-foods/:id` will edit a food. See examples below for details on which attributes to include in the body of the request</li>
+      <li>`DELETE` to `/api/all-foods/:id` will delete the food record with that id.</li>
+    </ul>
+
+    <h2>URL Params</h2>
+    <p>Pass the id (if required) in through the url. Pass all other information in the body of your request.</p>
+
+    <h2>Success response</h2>
+    <p>For `GET` and `PUT` requests to an :id and all `POST` requests, the success response will be the requested or new record.</p>
+    <p>For `DELETE` requests you should see a message indicating that you have successfully deleted a record.</p>
+
+    <h2>Error response</h2>
+    <p>Most endpoints will have helpful error messages. Usually this will occur when require params have not been included in the request.</p>
+
+    <h2>Sample Calls</h2>
+
+    <h4>Visit from your browser:</h4>
+    <p><a href='/api/all-foods'>/api/all-foods</a>
+    <p><a href='/api/all-foods/1'>/api/all-foods/1</a>
+
+    <h4>From your app:</h4>
+    <pre>
+      $.ajax({
+          url: API + '/api/all-foods',
+          method: 'GET'
+        })
+    </pre>
+
+    <h2>Current Progress</h2>
+    <p>This is the first pass at CRUDing the entire API. Going further I would like to pull out the functions into an MVC pattern.</p>
+
+    <p>Next I would like to call this site from my Quantified Self front end.</p>
+  </section>
 </body>
 </html>

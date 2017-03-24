@@ -24,7 +24,7 @@ Pass the id (if required) in through the url. Pass all other information in the 
 ## Success response
 For `GET` and `PUT` requests to an :id and all `POST` requests, the success response will be the requested or new record.
 
-For 'DELETE' requests you should see a message indicating that you have successfully deleted a record.
+For `DELETE` requests you should see a message indicating that you have successfully deleted a record.
 
 ## Error response
 Most endpoints will have helpful error messages. Usually this will occur when require params have not been included in the request.
